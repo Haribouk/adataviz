@@ -1,0 +1,99 @@
+:root {
+    --vert: #1f4d3a;
+    --jaune: #e9c46a;
+    --gris: #5d6a63;
+    --bordure: #d6d2c4;
+}
+
+* { 
+    box-sizing: border-box; 
+}
+
+body {
+    margin: 0;
+    background: #f6f3ec;
+    color: #1b2a23;
+    font-family: system-ui, sans-serif;
+}
+
+h1, h2, p { 
+    margin: 0; 
+}
+
+header { 
+    padding: 18px 20px; 
+}
+
+header {
+    background: var(--vert);
+    border-bottom: 4px solid var(--jaune);
+}
+
+header p {
+    font-family: Georgia, serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+}
+
+footer { 
+    color: black; 
+    font-size: 0.9rem; 
+    padding: 18px 20px;
+    margin-top: 45px;
+}
+
+footer a { 
+    color: var(--vert); 
+}
+
+main { 
+    max-width: 1000px; 
+    margin: 0 auto; 
+    padding: 32px 20px; 
+}
+
+h1 { 
+    font-family: Georgia, serif; 
+    font-size: 2rem; 
+    color: var(--vert); 
+}
+
+.compteur { 
+    margin-top: 6px; 
+    color: var(--vert); 
+}
+
+.outils { 
+    display: grid; 
+    gap: 10px; 
+    margin: 24px 0; 
+}
+.outils_filtres { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 10px; 
+}
+
+label { 
+    display: block; 
+    margin-bottom: 6px; 
+    font-size: 0.9rem; 
+    color: black; 
+}
+
+input, select {
+    width: 100%;
+    padding: 8px;
+    border: 1.5px solid var(--bordure);
+    border-radius: 8px;
+    background: white;
+    font: inherit;
+}
+
+.cartes {
+    padding: 8px;
+    border: solid black;
+    border-radius: 18px;
+}
+
