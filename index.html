@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paris se transforme</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <p>Paris se transforme</p>
+    </header>
+
+    <main>
+        <h1>Les projets qui transforment Paris</h1>
+        <p>3 262</p>
+
+        <form class="outils">
+            <section class="outils_recherche">
+                <label for="recherche">Rechercher un projet</label>
+                <input type="text" id="recherche" placeholder="Rechercher un projet ...">
+            </section>
+
+            <section class="outils_filtres">
+                <article>
+                    <label for="filtre_categorie">Catégorie</label>
+                    <select name="categorie" id="filtre_categorie">
+                        <option value="">Exemple</option>
+                    </select>
+                </article>
+
+                <article>
+                    <label for="filtre_codePostal">Code Postal</label>
+                    <select name="codePostal" id="filtre_codePostal">
+                        <option value="">Exemple</option>
+                    </select>
+                </article>
+            </section>
+        </form>
+
+        <section class="cartes">
+            <article class="carte">
+                <h2>Ravalement Groupe Scolaire Pereire</h2>
+                
+                <div>
+                    <span class="etiquette_categorie">Ecoles et crèches</span>
+                    <span class="etiquette_sous_categorie">Créations et rénovations des écoles et des crèches</span>
+                </div>
+
+                <address class="carte_adresse">
+                    <p><span aria-hidden="true">📍</span>26 rue Hippolyte Lebas</p>
+                    <p>75009</p>
+                </address>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>Données : <a href="https://opendata.paris.fr/explore/dataset/parissetransforme/information/">Paris se transforme</a>, Ville de Paris</p>
+    </footer>
+</body>
+</html>
