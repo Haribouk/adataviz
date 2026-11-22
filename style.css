@@ -92,8 +92,39 @@ input, select {
 }
 
 .cartes {
-    padding: 8px;
-    border: solid black;
-    border-radius: 18px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 16px;
 }
 
+.carte {
+    padding: 16px;
+    border: solid black;
+    border-radius: 18px;
+    background: white;
+    gap: 8px;
+}
+
+.etiquettes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+
+.etiquette_categorie {
+    margin-top: 12px;
+    background: var(--vert);
+    color: white;
+    border-radius: 4px;
+}
+
+.etiquette_sous_categorie {
+    margin-top: 12px;
+    background: var(--jaune);
+    color: black;
+    border-radius: 4px;
+}
+
+address {
+    margin-top: 12px;
+}
