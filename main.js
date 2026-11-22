@@ -1,8 +1,11 @@
-import { formaterDonnee } from "./utils.js"
+import { formaterDonnee, filtrerParNom } from "./utils.js"
 
 const URL = "https://opendata.paris.fr/api/explore/v2.1/catalog/datasets/parissetransforme/records?limit=20"
 const LIST = document.querySelector(".cartes")
 const COMPTEUR = document.querySelector(".compteur")
+const RECHERCHE = document.querySelector("#recherche")
+
+const projets = []
 
 const createCard = (data) => {
     const carte = document.createElement("article")
@@ -58,6 +61,11 @@ const afficherCompteur = (nb) => {
   }
 }
 
+const afficher = (data) => {
+  afficherCartes(data)
+  afficherCompteur(data.length)
+}
+
 const loadData = async () => {
   try {
     // Récupération données de l'API
@@ -67,12 +75,10 @@ const loadData = async () => {
     if (response.ok) {
       const jsonResponse = await response.json()
 
-      const cartes = []
       jsonResponse.results.forEach(item => {
-        cartes.push(formaterDonnee(item))
+        projets.push(formaterDonnee(item))
       })
-      afficherCartes(cartes)
-      afficherCompteur(cartes.length)
+      afficher(projets)
     } else {
         // Dans le cas où il y a une erreur serveur (Not Found)
         throw new Error("Erreur Serveur " + response.status)
@@ -82,4 +88,10 @@ const loadData = async () => {
       console.log(error)
   }
 }
+
+RECHERCHE.addEventListener("input", () => {
+  const resultat = filtrerParNom(projets, RECHERCHE.value)
+  afficher(resultat)
+})
+
 loadData()

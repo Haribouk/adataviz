@@ -5,3 +5,7 @@ export const formaterDonnee = (item) => ({
     adresse : item.adresse,
     codeP : item.code_postal
 })
+
+export const filtrerParNom = (data, recherche) => {
+    return data.filter(projet => projet.titre.toLowerCase().includes(recherche.toLowerCase()))
+}
