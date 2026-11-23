@@ -45,10 +45,10 @@ const createCard = (data) => {
     return carte
 }
 
-const afficherCartes = (data) => {
+const afficherCartes = (liste) => {
   LIST.innerHTML = ""
-  data.forEach(data => {
-    LIST.append(createCard(data))
+  liste.forEach(projet => {
+    LIST.append(createCard(projet))
   })
 }
 
