@@ -1,9 +1,10 @@
 import { formaterDonnee, filtrerParNom } from "./utils.js"
 
-const URL = "https://opendata.paris.fr/api/explore/v2.1/catalog/datasets/parissetransforme/records?limit=20"
+const URL = "https://opendata.paris.fr/api/explore/v2.1/catalog/datasets/parissetransforme/records?limit=40"
 const LIST = document.querySelector(".cartes")
 const COMPTEUR = document.querySelector(".compteur")
 const RECHERCHE = document.querySelector("#recherche")
+const FORMULAIRE = document.querySelector(".outils")
 
 const projets = []
 
@@ -92,6 +93,10 @@ const loadData = async () => {
 RECHERCHE.addEventListener("input", () => {
   const resultat = filtrerParNom(projets, RECHERCHE.value)
   afficher(resultat)
+})
+
+FORMULAIRE.addEventListener("submit", (event) => {
+  event.preventDefault()
 })
 
 loadData()
